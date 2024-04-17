@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z-Wave JS: QR Code Generation Utility</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Z-Wave JS: SmartStart QR Code Generation Utility</h1>
+
+    <div class="input">
+      <span>Version:</span>
+      <span>SmartStart (1)</span>
+
+      <span>Security classes:</span>
+      <div class="checkbox-list">
+        <input type="checkbox" id="security-class_s2-access" checked />
+        <label for="security-class_s2-access">S2 Access Control</label>
+
+        <input type="checkbox" id="security-class_s2-authenticated" checked />
+        <label for="security-class_s2-authenticated">S2 Authenticated</label>
+
+        <input type="checkbox" id="security-class_s2-unauthenticated" checked />
+        <label for="security-class_s2-unauthenticated"
+          >S2 Unauthenticated</label
+        >
+
+        <input type="checkbox" id="security-class_s0" checked />
+        <label for="security-class_s0">S0</label>
+      </div>
+
+      <label
+        ><input type="checkbox" id="protocol" checked /> Supported
+        protocols:</label
+      >
+      <div class="checkbox-list">
+        <input type="checkbox" id="protocol_zwave" checked />
+        <label for="protocol_zwave">Z-Wave</label>
+
+        <input type="checkbox" id="protocol_zwlr" />
+        <label for="protocol_zwlr">Z-Wave Long Range</label>
+      </div>
+
+      <span>Device-specific key (DSK):</span>
+      <input
+        type="text"
+        id="dsk"
+        value="00000-00000-00000-00000-00000-00000-00000-00000"
+      />
+
+      <span>Device class:</span>
+      <div class="textbox-list-3">
+        <label for="device-class_generic">Generic</label>
+        <input
+          type="number"
+          id="device-class_generic"
+          min="0"
+          max="65535"
+          value="0"
+        />
+        <span id="device-class_generic_hex">0x0000</span>
+
+        <label for="device-class_specific">Specific</label>
+        <input
+          type="number"
+          id="device-class_specific"
+          min="0"
+          max="65535"
+          value="0"
+        />
+        <span id="device-class_specific_hex">0x0000</span>
+
+        <label for="device-class_icon">Installer Icon Type</label>
+        <input
+          type="number"
+          id="device-class_icon"
+          min="0"
+          max="65535"
+          value="0"
+        />
+        <span id="device-class_icon_hex">0x0000</span>
+      </div>
+
+      <span>Device fingerprint:</span>
+      <div class="textbox-list-3">
+        <label for="manufacturer-id">Manufacturer ID</label>
+        <input
+          type="number"
+          id="manufacturer-id"
+          min="0"
+          max="65535"
+          value="0"
+        />
+        <span id="manufacturer-id_hex">0x0000</span>
+
+        <label for="product-type">Product Type</label>
+        <input type="number" id="product-type" min="0" max="65535" value="0" />
+        <span id="product-type_hex">0x0000</span>
+
+        <label for="product-id">Product ID</label>
+        <input type="number" id="product-id" min="0" max="65535" value="0" />
+        <span id="product-id_hex">0x0000</span>
+
+        <label for="version-major">App. Version (major)</label>
+        <input type="number" id="version-major" min="0" max="255" value="0" />
+
+        <label for="version-minor">App. Version (minor)</label>
+        <input type="number" id="version-minor" min="0" max="255" value="0" />
+      </div>
+
+      <button id="generate" class="button-9">
+        Generate QR Code
+      </button>
+
+      <div id="error-message"></div>
+    </div>
+
+    <div class="output">
+      <span>QR Code text:</span>
+      <textarea
+        readonly
+        id="qr-code-text"
+        rows="3"
+        value="9001346230075152535455414243444531323334352122232425001016387007680220655210100000017002880642002122232425414243444511121314153132333435"
+      ></textarea>
+
+      <span>QR Code:</span>
+      <svg id="qr-code" width="384" height="384"></svg>
+    </div>
+
+    <script type="module" src="build/script.js"></script>
+  </body>
+</html>
