@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/script.ts --bundle --outdir=build --minify --sourcemap --target=es2022",
+    "build": "esbuild src/script.ts --bundle --format=esm --outdir=build --sourcemap --target=es2022 --platform=browser --analyze=verbose",
     "serve": "node .dev.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.20.2",
+    "@zwave-js/core": "^14.1.0",
+    "esbuild": "^0.24.0",
     "qrcode-svg": "^1.1.0"
   }
 }
