@@ -1,12 +1,11 @@
 import QRCode from "qrcode-svg";
 import {
   QRCodeVersion,
-  QRProvisioningInformation as QRProvisioningInformationFull,
-  SecurityClass,
+  type QRProvisioningInformation as QRProvisioningInformationFull,
   ProvisioningInformationType,
-  Protocols,
-  isValidDSK,
-} from "./zwave_defs";
+} from "@zwave-js/core/qr";
+import { isValidDSK } from "@zwave-js/core/dsk";
+import { SecurityClass, Protocols } from "@zwave-js/core/definitions";
 
 const Z = "Z".charCodeAt(0);
 

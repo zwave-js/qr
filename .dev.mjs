@@ -7,6 +7,7 @@ const context = await esbuild.context({
   sourcemap: true,
   outdir: "build",
   target: "es2022",
+  format: "esm",
   platform: "browser",
   banner: {
     js: `new EventSource('/esbuild').addEventListener('change', () => location.reload());`,
