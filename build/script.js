@@ -2944,7 +2944,7 @@ async function generateQRCode(info, size = 256) {
     false,
     [
       uint16(info.genericDeviceClass << 8 | info.specificDeviceClass),
-      uint16(info.specificDeviceClass)
+      uint16(info.installerIconType)
     ].join("")
   );
   partsAfterChecksum.push(productType);
